@@ -1,0 +1,775 @@
+/********** Template CSS **********/
+:root {
+    --primary: #dc3545;     /* Blood red */
+    --secondary: #b02a37;   /* Dark red */
+    --light: #f8f9fa;
+    --dark: #1f1f1f;
+}
+
+/* General */
+body {
+    background-color: var(--light);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 700;
+    transition: .4s;
+}
+
+.btn-danger {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-danger:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    box-shadow: 0 8px 6px -6px #555;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-dark .nav-link {
+    font-weight: 600;
+    margin-left: 20px;
+    position: relative;
+}
+
+.navbar-dark .nav-link:hover {
+    color: #ffecec;
+}
+
+.navbar-dark .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    left: 50%;
+    bottom: -5px;
+    transition: .4s;
+}
+
+.navbar-dark .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    color: white;
+    padding: 70px 0;
+    text-align: center;
+}
+
+/* Service cards */
+.service-item {
+    position: relative;
+    padding: 30px;
+    height: 100%;
+    transition: .4s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item .service-icon {
+    width: 120px;
+    height: 120px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    color: white;
+}
+
+footer a {
+    color: #ffecec;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary);
+}
+
+.dashboard-links a {
+    color: #dc3545;          /* red */
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;   /* no underline */
+    transition: color 0.2s ease;
+}
+
+.dashboard-links a:hover {
+    color: #a71d2a;          /* darker red */
+    text-decoration: none;   /* explicitly prevent underline */
+}
+
+.awareness-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.awareness-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+.emergency-alert-box {
+    background: #fff5f5;
+    border-left: 5px solid #dc3545;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+/* ========== MOBILE FIRST BASE ========== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 16px;
+    margin: 0 auto;
+}
+
+/* Cards & sections */
+.card {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Buttons */
+button, .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.health-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.health-card .card-body {
+    flex: 1;
+}
+.hero-wrapper {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+/* 2x2 IMAGE GRID */
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100%;
+}
+
+.hero-img {
+    background-size: cover;
+    background-position: center;
+}
+
+/* INDIVIDUAL IMAGES */
+.img1 { background-image: url('/image/blood1.jpg'); }
+.img2 { background-image: url('/image/blood2.jpg'); }
+.img3 { background-image: url('/image/blood3.jpg'); }
+.img4 { background-image: url('/image/blood4.jpg'); }
+
+/* RED OVERLAY + CONTENT */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(220, 53, 69, 0.85);
+}
+
+/* DONOR CARD */
+.donor-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.donor-card-header {
+    background: #dc3545;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.donor-card-header small {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.donor-card-body {
+    padding: 22px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.info-row span {
+    color: #6c757d;
+}
+
+.thank-you {
+    text-align: center;
+    margin: 20px 0;
+    color: #495057;
+}
+
+/* SIDE PANEL */
+.info-panel {
+    border-radius: 16px;
+    background: #fff;
+    padding: 24px;
+    height: 100%;
+}
+
+.back-link {
+    color: #dc3545;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.donor-id-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.donor-id-card {
+    display: flex;
+    width: 720px;
+    height: 220px;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* LEFT RED STRIP */
+.donor-id-left {
+    width: 140px;
+    background: linear-gradient(180deg, #dc3545, #b02a37);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.portal-name {
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* MAIN SECTION */
+.donor-id-main {
+    flex: 1;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-row h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #dc3545;
+}
+
+.donor-no {
+    font-size: 13px;
+    color: #555;
+}
+
+/* DETAILS */
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    font-size: 14px;
+}
+
+.details div span {
+    display: block;
+    font-size: 11px;
+    color: #777;
+}
+
+.blood-group {
+    color: #dc3545;
+    font-size: 16px;
+}
+
+/* FOOTER */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #555;
+}
+
+.verified {
+    color: green;
+    font-weight: 600;
+}
+
+/* RIGHT CODE SECTION */
+.donor-id-code {
+    width: 120px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.code-box {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #bbb;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+}
+@media (max-width: 768px) {
+    .donor-id-card {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .donor-id-left {
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .donor-id-code {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+.barcode {
+    width: 90px;
+    height: 70px;
+    background: repeating-linear-gradient(
+        90deg,
+        #000,
+        #000 2px,
+        #fff 2px,
+        #fff 4px
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 9px;
+    color: #000;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+}
+.donor-card-header {
+    background: linear-gradient(90deg, #dc3545, #b02a37);
+    color: #fff;
+    padding: 18px 22px;
+}
+
+.header-left {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.header-left small {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+.badge {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-warning {
+    color: #000;
+}
+
+.table th {
+    font-weight: 600;
+}
+.faq-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.faq-question {
+    font-weight: 600;
+    color: #b11226;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.faq-card.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-card .icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-card.active .icon {
+    transform: rotate(45deg);
+}
+
+
+/****************************************************
+ PROFESSIONAL UI REFINEMENT (NON-DESTRUCTIVE OVERRIDES)
+ Purpose: Academic + Hospital-grade presentation
+****************************************************/
+
+/* ---------- Typography refinement ---------- */
+body {
+    font-size: 15px;
+    color: #2d2d2d;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+    letter-spacing: 0.2px;
+}
+
+/* ---------- Card refinement ---------- */
+.card,
+.card-pro,
+.faq-card,
+.service-item,
+.health-card {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #e6e6e6;
+}
+
+/* Remove excessive hover jump */
+.service-item:hover,
+.awareness-card:hover {
+    transform: translateY(-3px);
+}
+
+/* ---------- Button refinement ---------- */
+.btn {
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.btn-danger:hover {
+    box-shadow: none; /* professional portals avoid dramatic shadows */
+}
+
+/* ---------- Navbar refinement ---------- */
+.navbar-dark .nav-link {
+    font-size: 14px;
+}
+
+.navbar-dark .nav-link::after {
+    height: 2px;
+}
+
+/* ---------- Dashboard links ---------- */
+.dashboard-links a {
+    font-size: 14px;
+}
+
+/* ---------- FAQ refinement ---------- */
+.faq-question {
+    font-size: 15px;
+}
+
+.faq-answer {
+    font-size: 14px;
+}
+
+/* ---------- Donor card refinement ---------- */
+.donor-id-card {
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.donor-no {
+    font-weight: 500;
+}
+
+/* ---------- Table refinement ---------- */
+.table th {
+    font-size: 14px;
+}
+
+.table td {
+    font-size: 14px;
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+/* ---------- Footer refinement ---------- */
+footer {
+    font-size: 14px;
+}
+/*************************************************
+ INTERACTIVE INFO CARD (PROJECT STANDARD)
+*************************************************/
+.pro-card {
+    position: relative;
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+.landing-bg {
+    min-height: 100vh;
+    background-image: url('/images/landing-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* subtle top accent */
+.pro-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        #dc3545,
+        #b02a37
+    );
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.pro-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+    border-color: #dc3545;
+}
+
+.pro-card:hover::before {
+    opacity: 1;
+}
+.hero-section {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    margin-top: 70px;
+
+    /* Soft red overlay */
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220, 53, 69, 0.18),
+            rgba(220, 53, 69, 0.08)
+        ),
+        url('/image/landing-bg.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* HERO TEXT STYLING */
+.hero-title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #000000;
+
+    /* subtle glow */
+    text-shadow: 
+        0 4px 20px rgba(0,0,0,0.25);
+}
+
+.hero-subtitle {
+    margin-top: 14px;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.9);
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* CTA BUTTON */
+.hero-cta {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 42px;
+
+    background: linear-gradient(
+        90deg,
+        #ffc107,
+        #ffdd57
+    );
+
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+    color: #000;
+}
+
+/* NAVBAR IMPROVEMENT */
+.navbar {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    min-height: 55px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 6px 14px !important;
+}
+
+/* Remove extra spacing inside navbar container */
+.navbar .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.footer-full {
+    width: 100%;
+    background: linear-gradient(135deg, #b91c1c, #dc3545);
+    color: white;
+
+    /* Force full width even inside layout */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 0;
+    padding-right: 0;
+}

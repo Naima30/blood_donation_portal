@@ -1,0 +1,71 @@
+body {
+  background-color: #0f4c81;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+h1 {
+  color: white;
+  margin: 0;
+  font-size: 40px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+  color: white;
+  margin: 5px;
+  font-size: 20px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: #0f4c81;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.parallax-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative; /* FIXED */
+  overflow: hidden;
+}
+
+.parallax-item {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+.art {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
