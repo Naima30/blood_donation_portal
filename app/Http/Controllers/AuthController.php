@@ -210,19 +210,28 @@ public function login(Request $request)
      | PROFILE
      ========================================================= */
 
-    public function profile()
-    {
-        if (!Session::has('user_id')) {
-            return redirect('/login');
-        }
-
-        $donor = DB::table('donors')
-            ->join('users', 'users.id', '=', 'donors.user_id')
-            ->where('users.id', Session::get('user_id'))
-            ->first();
-
-        return view('dashboard.account.profile', compact('donor'));
+   public function profile()
+{
+    if (!Session::has('user_id')) {
+        return redirect('/login');
     }
+
+    $donor = DB::table('donors')
+        ->join('users', 'users.id', '=', 'donors.user_id')
+        ->select(
+            'users.name',
+            'users.email',
+            'donors.age',
+            'donors.blood_group',
+            'donors.phone',
+            'donors.location',
+            'donors.profile_photo' // ✅ ADD THIS
+        )
+        ->where('users.id', Session::get('user_id'))
+        ->first();
+
+    return view('dashboard.account.profile', compact('donor'));
+}
 
     public function updateProfile(Request $request)
     {

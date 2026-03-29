@@ -77,6 +77,10 @@ footer a:hover {
   background-size:contain;
   background-repeat:no-repeat;
 }
+.logo-img {
+    height: 60px;
+    width: auto;
+}
 
 </style>
 </head>
@@ -118,12 +122,23 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-        <a class="navbar-brand" href="/">BloodConnect</a>
+        
+        <!-- Logo + Brand Name -->
+        <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="/">
+    <img src="{{ asset('image/logo.png') }}" 
+     alt="BloodConnect Logo" 
+     class="logo-img me-2">
+    BloodConnect
+</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <!-- Toggle Button -->
+        <button class="navbar-toggler" type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
@@ -134,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
             </ul>
         </div>
+
     </div>
 </nav>
 
