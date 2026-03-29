@@ -37,7 +37,7 @@ public function showRegister()
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'admin',
+            'role' => 'donor',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
