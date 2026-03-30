@@ -40,21 +40,7 @@ class EmergencyController extends Controller
         $hospitalLng = (float) $geoData[0]['lon'];
 
         // 📍 Haversine Formula (Proper Binding)
-        $donors = Donor::selectRaw("
-        donors.*,
-        (6371 * acos(
-            cos(radians(?)) *
-            cos(radians(latitude)) *
-            cos(radians(longitude) - radians(?)) +
-            sin(radians(?)) *
-            sin(radians(latitude))
-        )) AS distance
-    ", [$hospitalLat, $hospitalLng, $hospitalLat])
-    ->where('blood_group', $request->blood_group)
-    ->whereNotNull('latitude')
-    ->whereNotNull('longitude')
-    ->having('distance', '<', 100)
-    ->orderBy('distance', 'asc')   // 🔥 Explicit ascending order
+        $donors = Donor::where('blood_group', $request->blood_group)
     ->paginate(5);
     session([
     'hospitalLat' => $hospitalLat,
