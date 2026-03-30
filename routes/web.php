@@ -253,3 +253,31 @@ Route::post('/emergency/request', [EmergencyController::class, 'requestBlood'])
     ->name('emergency.request');
     Route::get('/emergency/load-more', [EmergencyController::class, 'loadMore'])
     ->name('emergency.loadMore');
+
+    use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
+
+Route::get('/fix-donors', function () {
+
+    $donors = DB::table('donors')->get();
+
+    foreach ($donors as $d) {
+
+        $geo = Http::withHeaders([
+            'User-Agent' => 'BloodPortalApp'
+        ])->get('https://nominatim.openstreetmap.org/search', [
+            'q' => $d->location,
+            'format' => 'json',
+            'limit' => 1,
+        ])->json();
+
+        if (!empty($geo)) {
+            DB::table('donors')->where('id', $d->id)->update([
+                'latitude' => $geo[0]['lat'],
+                'longitude' => $geo[0]['lon'],
+            ]);
+        }
+    }
+
+    return "Donors updated successfully!";
+});
