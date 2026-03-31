@@ -242,7 +242,7 @@ h2.fw-bold::after {
             <div class="card h-100 shadow-sm text-center p-3">
                 <h5 class="fw-bold">Find Blood Banks</h5>
                 <p>Locate nearby hospitals and blood banks.</p>
-                <a href="/bloodbanks" class="btn btn-danger">View Locations</a>
+                <a href="/blood-banks" class="btn btn-danger">View Locations</a>
             </div>
         </div>
 

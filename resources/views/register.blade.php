@@ -6,6 +6,13 @@
     <h2 class="text-center fw-bold mb-4">Donor Registration</h2>
 
     <div class="card shadow-sm p-4">
+        @if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error)
+            <p style="color:red;">{{ $error }}</p>
+        @endforeach
+    </div>
+@endif
         <form method="POST" action="/register">
             @csrf
 
