@@ -250,7 +250,7 @@ h2.fw-bold::after {
             <div class="card h-100 shadow-sm text-center p-3">
                 <h5 class="fw-bold">Emergency Help</h5>
                 <p>Request blood immediately in emergency cases.</p>
-                <a href="/emergency" class="btn btn-danger">Emergency Info</a>
+                <a href="/emergency-info" class="btn btn-danger">Emergency Info</a>
             </div>
         </div>
 
